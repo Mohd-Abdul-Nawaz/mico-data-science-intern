@@ -1,0 +1,27 @@
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Local run logs
+*.log
+
+# Scratch / temp files (run logs, extraction helpers)
+s1.txt
+s1e.txt
+s2.txt
+s2e.txt
+s3.txt
+s3e.txt
+extract_pdf.py
+extracted_resume_text.txt
