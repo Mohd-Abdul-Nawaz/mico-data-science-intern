@@ -117,6 +117,16 @@ streamlit run project_3_classification_churn/streamlit_app.py
 
 Push the code (scripts + Streamlit apps) to GitHub and link the repo — and the live Streamlit demo URLs — from your resume.
 
+**Live Streamlit dashboards (deployed):**
+
+| Project | Live demo |
+|---------|-----------|
+| 1 — E-Commerce Customer Behavior (EDA) | https://mico-data-science-intern-kte8yj6a7aaryhfnj3oyab.streamlit.app/ |
+| 2 — House Price Prediction (Regression) | https://mico-data-science-intern-uz5cau86ztv5kmua6r9jbv.streamlit.app/ |
+| 3 — Customer Churn Prediction (Classification) | https://mico-data-science-intern-hcq56yhkqpkmgjaf9clrhz.streamlit.app/ |
+
+Repository: https://github.com/Mohd-Abdul-Nawaz/mico-data-science-intern
+
 ---
 
 ## 6. Certifications & Online Courses (Optional)

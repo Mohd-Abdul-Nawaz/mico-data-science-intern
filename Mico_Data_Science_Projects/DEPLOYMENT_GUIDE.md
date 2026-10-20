@@ -248,7 +248,7 @@ Python | Pandas | NumPy | SciPy | Matplotlib | Seaborn | Streamlit
 - Performed EDA on 2,010 customer records; handled missing values, outliers, duplicates
 - Applied ANOVA hypothesis testing (F = 18.70, p < 0.001) and correlation analysis
 - Engineered Boolean & categorical features (High_Spender, Recent_Customer, Age_Group)
-- [Live Demo](https://your-streamlit-url.streamlit.app) | [Code](https://github.com/Mohd-Abdul-Nawaz/repo)
+- [Live Demo](https://mico-data-science-intern-kte8yj6a7aaryhfnj3oyab.streamlit.app/) | [Code](https://github.com/Mohd-Abdul-Nawaz/mico-data-science-intern/tree/main/project_1_eda_customer_behavior)
 ```
 
 ```
@@ -257,7 +257,7 @@ Python | Scikit-learn | Pandas | Matplotlib | Streamlit
 - Built Multiple Linear Regression on 1,494 records (R² = 0.866, Adjusted R² = 0.863, RMSE = ₹441,571)
 - Preprocessed numerical + categorical variables; handled missing data & outliers
 - Evaluated with R², Adjusted R², MAE, MSE, RMSE; residual analysis
-- [Live Demo](https://your-streamlit-url.streamlit.app) | [Code](https://github.com/Mohd-Abdul-Nawaz/repo)
+- [Live Demo](https://mico-data-science-intern-uz5cau86ztv5kmua6r9jbv.streamlit.app/) | [Code](https://github.com/Mohd-Abdul-Nawaz/mico-data-science-intern/tree/main/project_2_regression_house_prices)
 ```
 
 ```
@@ -266,7 +266,7 @@ Python | Scikit-learn | Imbalanced-learn | Streamlit
 - Built Logistic Regression to predict churn (ROC-AUC = 0.684)
 - Applied SMOTE after encoding, inside an imbalanced-learn pipeline
 - Evaluated with confusion matrix, precision, recall, F1-score, ROC curve
-- [Live Demo](https://your-streamlit-url.streamlit.app) | [Code](https://github.com/Mohd-Abdul-Nawaz/repo)
+- [Live Demo](https://mico-data-science-intern-hcq56yhkqpkmgjaf9clrhz.streamlit.app/) | [Code](https://github.com/Mohd-Abdul-Nawaz/mico-data-science-intern/tree/main/project_3_classification_churn)
 ```
 
 ---
