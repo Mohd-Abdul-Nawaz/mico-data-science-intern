@@ -70,12 +70,6 @@ Expected Graduation: 2028 | CPI: 7.30 / 10.0
 
 ---
 
-## ACADEMIC ACHIEVEMENTS & POSITIONS OF RESPONSIBILITY
-
-*(Optional — add club roles, academic awards, or positions of responsibility here. Keep it truthful.)*
-
----
-
 ## DECLARATION
 
 I hereby declare that the information furnished above is true to the best of my knowledge and belief.

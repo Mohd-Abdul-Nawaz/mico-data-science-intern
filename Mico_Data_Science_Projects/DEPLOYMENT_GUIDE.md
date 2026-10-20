@@ -9,7 +9,7 @@ This guide shows how to run, test, and deploy the three data science projects so
 ```
 Mico_Data_Science_Projects/
 ├── generate_data.py                  # Creates all synthetic datasets
-├── requirements.txt                  # Python dependencies (pinned)
+├── requirements.txt                  # Python dependencies (bounded version ranges)
 ├── DEPLOYMENT_GUIDE.md               # This file
 ├── _run_all.py                       # Runs all 3 analysis scripts, prints key metrics
 ├── _verify_apps.py                   # Headless Streamlit smoke test for all 3 apps
@@ -57,14 +57,24 @@ pip install -r requirements.txt
 ```
 
 This installs: pandas, numpy, scikit-learn, scipy, imbalanced-learn, matplotlib,
-seaborn, streamlit, jupyter, pyarrow, joblib, plotly.
+seaborn, streamlit, pyarrow, joblib, plotly, openpyxl, nbformat.
 
-> **Pin note:** `requirements.txt` pins exact working versions. Two conflicts are
-> already resolved inside it:
-> - `pyarrow==17.0.0` — pyarrow >= 18 requires numpy >= 2.0, which breaks the pinned numpy 1.26.4.
-> - `seaborn==0.13.2` with `pandas==2.2.2` — seaborn 0.13's `boxplot` relies on
->   `SeriesGroupBy.grouper`, removed in pandas >= 3.0. Project 1's dashboard therefore
->   draws its boxplots with matplotlib directly (`boxplot_by()`), so it works on any version.
+> **Version note:** `requirements.txt` uses **bounded ranges** (e.g. `numpy>=2.1,<2.3`)
+> instead of exact pins, so pip can always find a **prebuilt wheel** on Python 3.11, 3.12
+> *and* 3.13 (Streamlit Cloud's default). The exact pins used in an earlier draft
+> (numpy 1.26.4, scipy 1.13.1, matplotlib 3.8.4, pyarrow 17.0.0) ship **no wheels for
+> Python >= 3.13**, so pip falls back to compiling them from source and the cloud build
+> hangs forever at `Preparing metadata (pyproject.toml): still running...`.
+>
+> Two constraints are kept on purpose inside the ranges:
+> - `pandas < 3.0` — seaborn 0.13's `boxplot` relies on `SeriesGroupBy.grouper`, removed
+>   in pandas >= 3.0. Project 1's dashboard therefore also draws its boxplots with
+>   matplotlib directly (`boxplot_by()`), so it works on any version.
+> - `pyarrow >= 18` (first release with Python 3.13 wheels) — which requires `numpy >= 2.1`,
+>   so numpy is bounded to `>= 2.1` as well.
+>
+> Re-running `_run_all.py` and `_verify_apps.py` on this stack reproduces every metric
+> in the Verified Metrics table below exactly.
 
 ---
 
@@ -183,9 +193,15 @@ Use **Streamlit Community Cloud** (free) to host your apps. A reviewer just need
 
 **Tip:** Deploy all three apps as separate Streamlit Cloud apps, or create a single multi-page Streamlit app combining all three.
 
-> **Streamlit Cloud note:** the deploy builds from `requirements.txt`. Because the pins are
-> consistent (numpy 1.26.4 + pyarrow 17.0.0 + pandas 2.2.2 + seaborn 0.13.2), the build
-> will resolve cleanly. Do not loosen these pins on the deployed branch.
+> **Streamlit Cloud notes — read these if the build hangs:**
+> - Streamlit Cloud installs dependencies **only from a `requirements.txt` at the repo root**.
+>   The root copy is mandatory — without it you get `ModuleNotFoundError: matplotlib` because
+>   nothing was installed (the nested file alone is ignored).
+> - `runtime.txt` (`python-3.11`) and `.python-version` (`3.11`) force Python 3.11, matching the
+>   local environment. If the platform ignores them and falls back to its default 3.13, the
+>   bounded ranges still install from wheels — either way the build completes instead of hanging.
+> - Keep the bounded ranges in `requirements.txt`. Do **not** switch back to exact pins (no
+>   Python 3.13 wheels) and do **not** let pandas reach 3.0 (seaborn boxplot break).
 
 ### Deploy via Render (alternative free option)
 
@@ -264,7 +280,8 @@ Python | Scikit-learn | Imbalanced-learn | Streamlit
 | Port 8501 already in use | Run `streamlit run app.py --server.port 8502` |
 | SMOTE error | Run `pip install imbalanced-learn` |
 | `ValueError: cannot convert float NaN to integer` | You are running an older `generate_data.py`; regenerate the datasets with the current script |
-| Boxplot crashes with `UnboundLocalError: boxprops` | seaborn 0.13 vs pandas >= 3.0 conflict — install the pinned versions, or use the matplotlib-based `boxplot_by()` already in Project 1 |
+| Boxplot crashes with `UnboundLocalError: boxprops` | seaborn 0.13 vs pandas >= 3.0 conflict — install the bounded versions from `requirements.txt` (`pandas < 3.0`), or use the matplotlib-based `boxplot_by()` already in Project 1 |
+| Streamlit Cloud build hangs at `Preparing metadata (pyproject.toml): still running...` | pip is compiling a package from source — the Python version has no wheel for it. Ensure the **root** `requirements.txt` with the bounded ranges is committed; `runtime.txt` / `.python-version` set 3.11, and the ranges install from wheels even on 3.13. |
 | App shows old data | Delete `outputs/` folder and re-run the analysis script first |
 
 ---

@@ -110,9 +110,10 @@ streamlit run project_2_regression_house_prices/streamlit_app.py
 streamlit run project_3_classification_churn/streamlit_app.py
 ```
 
-> **Important:** `requirements.txt` pins the exact working versions. Do **not** upgrade
-> seaborn/pandas beyond the pins — seaborn 0.13.0 is broken against pandas ≥ 3.0
-> (`SeriesGroupBy.grouper` was removed), which crashes every `boxplot`/`catplot` call.
+> **Important:** `requirements.txt` uses **bounded ranges** (not exact pins) so pip can always
+> find prebuilt wheels on Python 3.11–3.13. Do **not** let `pandas` reach 3.0 — seaborn 0.13 is
+> broken against pandas ≥ 3.0 (`SeriesGroupBy.grouper` was removed), which crashes every
+> `boxplot`/`catplot` call. The `pandas < 3.0` bound in `requirements.txt` enforces this.
 
 Push the code (scripts + Streamlit apps) to GitHub and link the repo — and the live Streamlit demo URLs — from your resume.
 
