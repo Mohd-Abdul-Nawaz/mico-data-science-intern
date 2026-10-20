@@ -67,9 +67,9 @@ Expected Graduation: 2028 | CPI: 7.30 / 10.0
 
 ---
 
-## CERTIFICATIONS & ONLINE COURSES *(Optional)*
+## ACHIEVEMENTS
 
-- Data Science using Generative AI — Certificate of Completion  
+- Solved **150+ LeetCode** problems in Python, covering data structures & algorithms  
 
 ---
 

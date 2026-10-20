@@ -2,11 +2,11 @@
 
 Use this guide to fill in the placeholders in `Mico_Data_Science_Intern_Resume.md` and turn it into a selection-ready resume.
 
-> **Status of this copy:** The header, career objective, education, skills, certification and
-> declaration sections are filled in with real details. The **PROJECTS** section is now
-> populated with the three verified projects (see §5). The **ACADEMIC ACHIEVEMENTS** section
-> is intentionally left as an optional prompt — add only truthful items, or delete the
-> placeholder line if you have none.
+> **Status of this copy:** The header, career objective, education, skills, achievements and
+> declaration sections are filled in with real details, and the **PROJECTS** section (§5)
+> carries the three verified projects with live demo links. Certifications, a LinkedIn URL and
+> any placeholder lines are deliberately **omitted** — include a section only when you have a
+> truthful, defensible entry for it.
 
 ---
 
@@ -22,11 +22,12 @@ Use this guide to fill in the placeholders in `Mico_Data_Science_Intern_Resume.m
 | Relocation | `Open to relocation: Bangalore, Karnataka` |
 
 > **Tip:** Since Mico is based in Bangalore, the **"Open to relocation: Bangalore, Karnataka"**
-> line reassures recruiters. Add a **LinkedIn URL** and a **portfolio link** (once you have
-> deployed live demos) to the header line — both materially improve shortlist rates.
+> line reassures recruiters. The live demo links already sit in the PROJECTS section, so no
+> separate portfolio link is needed.
 >
-> **Note:** A `linkedin.com/in/yourprofile` placeholder is deliberately *not* present —
-> never publish a placeholder link. Add your real one only after creating the profile.
+> **Note:** This copy deliberately includes **no LinkedIn URL** and no placeholder links of any
+> kind — never publish a placeholder. Add a real LinkedIn URL only if you create the profile
+> and choose to include it.
 
 ---
 
@@ -129,31 +130,30 @@ Repository: https://github.com/Mohd-Abdul-Nawaz/mico-data-science-intern
 
 ---
 
-## 6. Certifications & Online Courses (Optional)
+## 6. Achievements & Positions of Responsibility
 
-Add only completed, verifiable certifications. Good platforms:
-- Coursera, edX, Udemy, Great Learning, Simplilearn, NPTEL, LinkedIn Learning
+The resume includes one verified achievement:
 
-Relevant examples: Python for Data Science, Data Analysis with Python, SQL for Data Science, Machine Learning Basics.
+- **150+ LeetCode problems solved** (data structures & algorithms) — evidence of consistent
+  problem-solving practice relevant to a data science role.
+
+Add further items only when they are truthful and defensible, for example:
+- Secured X percentile in a hackathon or coding competition
+- Organized a tech fest or club event
+- Volunteer at a college event
+
+> **Certifications were intentionally left out** of this resume — add a separate section back
+> only if you earn one that is directly relevant to the role.
 
 ---
 
-## 7. Achievements & Positions of Responsibility (Optional)
-
-Examples:
-- Secured X percentile in [hackathon/coding competition]
-- Organized [tech fest/club event] as [role]
-- Volunteer at [college event/NSS]
-
----
-
-## 8. Declaration
+## 7. Declaration
 
 Fill in Place and Date, then type your name at the bottom. When you convert to PDF for submission, you can either sign it or just type your name.
 
 ---
 
-## 9. Final Steps Before Sending
+## 8. Final Steps Before Sending
 
 1. **Save as PDF:** Convert the Markdown file to PDF (use any Markdown-to-PDF tool, or copy into Word/Google Docs and export as PDF). Name the file professionally:  
    `FirstName_LastName_Data_Science_Intern_Resume.pdf`
@@ -166,12 +166,12 @@ Fill in Place and Date, then type your name at the bottom. When you convert to P
 
 ---
 
-## 10. File Checklist
+## 9. File Checklist
 
 - [x] All `[BRACKETS]` replaced with real info
 - [x] All three projects filled in with verified, reproducible metrics
 - [ ] Only skills you can defend are listed
 - [ ] Saved as PDF with professional filename
-- [ ] LinkedIn and GitHub links are live and public
+- [ ] GitHub repo and the three live Streamlit demo links are public and working
 
 Good luck with your Mico application!
